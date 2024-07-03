@@ -1,0 +1,358 @@
+/* импортировали шрифт */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Сбросить внутренние и внешние отступы для всех элементов 
+
+* {
+	padding: 0;
+	margin: 0;
+}
+*/
+
+/* селектор */
+body { 
+    /* через background мы можем комбинировать сразу несколько параметров, как в примере со шрифтами ниже
+    bacground red  clip="true" repeate="true" ... */
+
+    background-color: #f1f1f1;
+    color: #0f141e;
+
+    /* задание базового шрифта для всего сайта */
+    font-size: 16px;
+    font-weight: normal; /*жирность*/
+    /* передаем списко шрифтов, брак\узер идет по очереди пока не найдет который есть в наличии */   
+
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+
+    /* sans-serif - указывает чтобы быть хоть какой то из этого семейства */
+
+    /* подключили импортированный шрифт */
+    font-family: "Roboto Condensed", sans-serif;
+
+    /* комбинирование правил - равносильно 3 строкам выше*/
+    /*         font: normal 16px 'Roboto', 'sans-serif'    */
+}
+
+/* стилизация картинки */
+
+/* обратились к конкретной картинке -> дописали у нее в HTML файле свойство 
+`class` -> обращаемся через .
+или
+ `id`   -> обращаемся через #
+ */
+.avatar {
+    width: 200px;
+    border-radius: 28px;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 1);
+    /* также это свой-во можно настраивать через "посмотреть код по картинке" */
+}
+
+/* стилизация параграфов для блока info (div)*/
+.info p {
+    color: #86898f;
+    margin: 0;
+    font-style: italic;
+    text-decoration: underline;
+    /* text-transform: capitalize; - все слова с большой буквы */
+    /* text-transform: uppercase; */
+    /* letter-spacing: 15px; - расстояние между буквами */
+    /* word-spacing: 42px; - расстояние между словами */
+}
+
+.info {
+    margin-bottom: 40px;
+    display: flex;
+}
+
+/* пишем адаптивы - хотим чтобы на ширине до 700px выполнялись определенный набор правил */
+@media (max-width: 700px) {
+    .info {
+        text-align: center;
+        display: block;
+    }
+}
+
+.info-text {
+    margin-left: 40px;
+}
+
+.info-text h4 {
+    margin-bottom: 10px;
+}
+
+.info-text h1 {
+    margin-bottom: 10px;
+}
+
+/* Box-Model */
+/* главный контейнер - родитель */
+.container {
+    /* width: 100%; */
+    max-width: 750px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+/* наш вложенный контейнер */
+.social_1 {
+    background: green;
+    /* размеры отталкиваются от размера родителя -> т.е. в какой блок(родитель) вложен данный контейнер */
+    width: 75%;
+
+    /* внутренний отступ - от внешней границы нашего элемента */
+    padding: 15px; 
+    /* padding: 15px 40px; - параметры - верх/низ, право/лево  */
+    /* padding: 15px 20px 25px 30px; - параметры - top rigth bottom left*/
+    /* padding-top: 25px; */
+
+    /* внешний отспут - до нашего элемента*/
+    /* принцип описания правил, как и у border */
+    margin: 30px;  
+
+    /* параметры границы */
+    border: 3px solid red; 
+    border-bottom-style: dotted;
+    border-top-width: 15px;
+    border-right-color: blue;
+}
+
+/* в таком формате применится абсолютно ко всем div дочерним блокам div вложенным */
+
+.box-model  {
+    height: 200px;
+}
+
+.box-model div {
+    /* расположение элементов в линию */
+    float: left;
+
+    background: black;
+    height: 200px;
+
+    /* 4 блока по 25% = 100% размера родителя */
+    width: 25%; 
+
+    border: 4px solid red;
+
+    /* выстраиваем элементы в один уровень несмотря на размеры границ и внешних отступов*/
+    box-sizing: border-box;
+}
+
+/*  
+в таком формате только к верхнему уровню вложенных блоков div
+.box-model > div {
+
+}
+*/
+
+/* Стилизация всех ссылок на странице */
+a {
+    color: black;
+    text-decoration: none;
+
+}
+
+/* Псевдо селекторы - стейты наших селекторов */
+/* Обработка состояний - наведение мыши, клик и тд */
+
+/* наведение мыши на ссылку */
+a:hover {
+    text-decoration: underline;
+}
+
+/* клик на ссылку */
+a:active {
+    color: blue;
+}
+
+/* ссылка которую уже посетили ранее */
+a:visited {
+    color: purple;
+}
+
+/* Условные общие компоненты */
+
+/* классы цветов, которые можем потом переиспользовать в различных местах - для общей стилизации любых элементов*/
+.bg-yellow {
+    background: #fff9dc;
+}
+
+.bg-red {
+    background: #ffe5e5;
+}
+
+.bg-green {
+    background: #e5ffe7;
+}
+
+.card {
+    padding: 15px 20px;
+    /* лучше всего использовать margin-bottom а не margin-top - тк при удалении верхнего элемента может поплыть все, а нижний отступ всегда сохранится*/
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+/* стиль заголовков в блоке card */
+.card h2 {
+        margin-bottom: 10px;
+}
+
+/* стилизуем список */
+/* в HTML у списков есть по умолчанию CSS свойства с которыми мы можем взаимодействовать */
+.list {
+    padding: 0 20px;
+    /* list-style: none; - убрать цифры*/
+}
+
+/* стилизация элементов списка */
+.list li {
+    color: #86898f;
+    margin-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+
+
+/* Стилизация таблицы */
+.table {
+    width: 100%;
+}
+
+/* стилизация всех ячеек таблицы */
+.table td {
+    /* margin-bottom: 10px; - так не сработает надо делать через display*/
+    padding-bottom: 10px;
+}
+
+/* стилизация строки(класса temp-row) */
+/* .table .temp-row td {
+    color: blue;
+} */
+
+/* стилизация ячейки (класса temp-cell) */
+/* .table .temp-cell {
+    color: red;
+} */
+
+/* Вариант стилизация элементов таблицы через псевдо-селекторы */
+/* стилизация первой и третий колонки */
+.table td:nth-child(2),
+.table td:nth-child(3) {
+    color: #86898f;
+}
+
+/* стиль для 2 строки */
+/* .table tr:nth-child(1) {
+    background: lime;
+} */
+
+/* каждая четная(even)/нечетная(odd) строка подсвечивается*/
+/* .table tr:nth-child(even) {
+    background: red;
+} */
+
+/* Стилизация списка - блока про Курсы */
+.link-list {
+    list-style: none;
+    padding: 0;
+}
+
+.link-list li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Стилизация блока формы */
+.contact h2{
+    text-align: center;
+}
+
+/* стилизация label компонента формы */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #86898f;
+}
+
+/* стилизация input компонента формы */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    /* обнулили все границы */
+    border: none;
+    background: transparent;
+
+    /* стилизируем конрекретную границу */
+    border-bottom: 1px solid #ccc;
+    color: black;
+    padding: 15px 0 10px;
+
+    /* настройка цвета границы при вводе данных */
+    outline: none;
+
+    /* унаследовали шрифт от родителя */
+    font-family: inherit;
+}
+
+/* изменили поведение элемента - 2 эелемента стали в строку */
+.form-row {
+    /* display: none; - позволяет визуально убрать элементы из документа*/
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/* стиль для все компонентов form-group в блоке form-row */
+.form-row > .form-group {
+    width: 50%;
+
+    /* или убираем это и пишем стиль для первого или последего компонента как описано ниже */
+    margin-right: 20px;
+}
+
+/* стиль только для первого элемента в группе блоков */
+/* .form-row > .form-group:first-child {
+    margin-right: 20px;
+} */
+
+/* или настроили чисто для последнего элемента */
+.form-row > .form-group:last-child {
+    margin-right: 0px;
+}
+
+/* Стиль для кнопки */
+.btnSbm {
+    background: black;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    font-family: inherit;
+    /* смена курсора при наведении*/
+    cursor: pointer;
+}
+
+.btnSbm:hover {
+    opacity: 0.8;
+}
+
+/* Position / Box */
+
+.position {
+    position: relative;
+    border: 4px solid black;
+    margin-top: 40px;
+    padding: 20px;
+    height: 150;
+}
+
+.box {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: lightcoral;
+
+    bottom: 50;
+    left: 10px;
+
+    border-radius: 50%;
+}

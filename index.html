@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <title>MAV CV</title>
+    <meta charset="UTF-8">
+
+    <!-- Подключаем дополнительный файл стилей, подключаем сколько угодно таких файлов -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- быстрый способ создания div class через .myBlockName -> Tab -->
+    <!-- быстрый способ создания div id через #myBlockName -> Tab -->
+    <div class="container">
+
+        <!-- div - блочный элемент который создает свой собственный блок, для создания структуры/стилистики-->
+        <div class="info">
+            <!-- через class указываем class-name картинки, чтобы обрашаться к ней в CSS через . -->
+            <!-- через id указываем id-name картинки, чтобы обрашаться к ней в CSS через # -->
+            <img src="VVP.jpeg" alt="Тут его фотка" class="avatar" />
+
+            <div class="info-text">
+                <h1>Президент РФ</h1>
+                <p>Владимир <strong>Владимирович</strong></p>
+                <p>Верховный <em>главнокомандующий</em></p>
+
+                <h4>Мои социальные сети - блок social_2</h4>
+
+                <a href="https://telegram.com">Ссылка в тексте</a>
+                |
+                <a href="https://telegram.com">https://telegram.com</a>
+                |
+                <a href="https://t.com">Ссылка которую еще не посещали</a>
+            </div>
+
+        </div>
+
+        <h4>Делаем стилистику у условно общих компонентов</h4>
+
+        <!-- используем класс стиля для блока - bg-yellow -->
+        <div class="card bg-yellow">
+            <h2>Мои хобби:</h2>
+            <ol class="list">
+                <li>Качалка</li>
+                <li>Чтение</li>
+                <li>Путешествие</li>
+            </ol>
+        </div>
+
+        <div class="card bg-green">
+            <h2>Опыт работы</h2>
+            <table class="table"> <!-- стилизация будет уже в CSS -->
+                <!-- <tr>               - заголовки сделаем в CSS
+                    <th>Заголовк 1</th> 
+                    <th>Заголовк 2</th>
+                    <th>Заголовк 3</th>
+                </tr> -->
+                <tr> <!-- table row -->
+                    <td>Ячейка 1,1</td>
+                    <td>Ячейка 1,2</td>
+                    <td>Ячейка 1,3</td>
+                </tr>
+                <tr>
+                    <td>Ячейка 2,1</td>
+                    <td>Ячейка 2,2</td>
+                    <td>Ячейка 2,3</td>
+                </tr>
+                <tr class="temp-row">
+                    <td>Ячейка 3,1</td>
+                    <td>Ячейка 3,2</td>
+                    <td>Ячейка 3,3</td>
+                </tr>
+                <tr>
+                    <td class="temp-cell">Ячейка 4,1</td>
+                    <td class="temp-cell">Ячейка 4,2</td>
+                    <td>Ячейка 4,3</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card bg-red">
+            <h2>Youtube курсы</h2>
+            <ul class="link-list">
+                <li><a href="https://www.youtube.com/watch?v=DOEtVdkKwcU" target="_blank">Курс по HTML</a></li>
+                <li><a href="https://www.youtube.com/watch?v=SpCUuyZZTp8" target="_blank">Курс по CSS</a></li>
+            </ul>
+
+        </div>
+
+        <div class="contact">
+            <!-- используем созданный класс для стилизации -->
+            <h2 class="bg-red">Связаться со мной</h2>
+            <form action="/">
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="name">Ваше имя:</label>
+                        <input type="text" id="name" placeholder="Введите имя...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Ваше email:</label>
+                        <input type="email" id="email" placeholder="Введите email-адрес...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="text">Ваше сообщение:</label>
+                    <textarea name="" id="text" rows="3" cols="25"></textarea>
+                </div>
+
+                <input class="btnSbm" type="submit" value="Связаться">
+
+            </form>
+        </div>
+
+        <hr>
+        <p>Пример Box-model (боксы в строку) + использования свойства box-sizing</p>
+
+        <div class="box-model">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <hr>
+        <div class="social_1">
+            <h2>Мои социальные сети - блок socail_1 (тесты стилей)</h2>
+
+            <ul>
+                <li>Сделали ссылку: <a href="https://telegram.com">https://telegram.com</a></li>
+                <li><a href="https://telegram.com">Ссылка в тексте</a></li>
+                <li>Ссылка с открытием в этом же окне <a href="https://telegram.com">https://telegram.com</a></li>
+                <li><a href="https://telegram.com" target="_blank">Ссылка с открытием в новом окне</a></li>
+            </ul>
+        </div>
+
+        <hr>
+        <div class="position">
+            <div class="box">
+    
+            </div>
+        </div>
+        
+    </div>
+
+    
+
+    <!-- лайфхак - чтобы было больше места для прокрутки - потом удалим -->
+    <div style="margin-bottom: 500px;"></div>
+
+</body>
+
+</html>
